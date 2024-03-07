@@ -1,13 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
-  const onToggleMenu = () => setShowMenu(!showMenu);
+  const refMenu = useRef<HTMLUListElement>(null);
+
+  const onToggleMenu = () => {
+    refMenu.current?.classList?.toggle(styles.NavShowList);
+  }
 
   return (
     <nav className={styles.Nav}>
@@ -19,7 +22,7 @@ export default function Navbar() {
           <div></div>
         </div>
       </header>
-      <ul className={`${styles.NavList} ${showMenu && styles.NavShowList}`}>
+      <ul ref={refMenu} className={styles.NavList}>
         <li>
           <Link href="">Frequent questions</Link>
         </li>

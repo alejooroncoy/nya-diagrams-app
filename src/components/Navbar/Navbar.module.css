@@ -8,6 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 4;
+  position: relative;
 }
 
 .NavHeader {
@@ -62,8 +64,11 @@
 
   .NavList {
     flex-direction: column;
-    margin-top: 1rem;
-    display: none;
+    margin-top: 0;
+    display: flex;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.25s ease;
   }
 
   .NavIcon {
@@ -73,7 +78,8 @@
   }
 
   .NavShowList {
-    display: flex;
+    max-height: 9rem;
+    margin-top: 1rem;
   }
 }
 
