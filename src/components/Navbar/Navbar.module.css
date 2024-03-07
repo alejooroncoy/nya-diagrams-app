@@ -1,0 +1,37 @@
+.Nav {
+  padding: 1rem 7rem 1rem 7rem;
+  background: #d9376e;
+  color: #eff0f3;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header {
+  font-size: 1.4em;
+}
+
+.NavList {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4rem;
+
+  font-size: 1.4em;
+
+  & a {
+    color: #eff0f3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & li {
+    list-style-type: none;
+  }
+}
