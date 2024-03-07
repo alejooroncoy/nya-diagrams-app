@@ -1,0 +1,84 @@
+.Nav {
+  padding: 1rem 7rem 1rem 7rem;
+  background: #d9376e;
+  color: #eff0f3;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavHeader {
+  font-size: 1.4em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavList {
+  display: flex;
+  gap: 1.4rem;
+
+  font-size: 1.4em;
+
+  & a {
+    color: #eff0f3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & li {
+    list-style-type: none;
+  }
+}
+
+.NavIcon {
+  display: none;
+
+  & div {
+    width: 35px;
+    height: 6px;
+    background: #eff0f3;
+
+    border-radius: 3px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Nav {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .NavHeader {
+    width: 100%;
+  }
+
+  .NavList {
+    flex-direction: column;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .NavIcon {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .NavShowList {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Nav {
+    padding: 1rem 3rem 1rem 3rem;
+  }
+}

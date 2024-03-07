@@ -1,0 +1,45 @@
+.Footer {
+  background: #fffffe;
+  color: #2a2a2a;
+  font-size: 1.4em;
+
+  border-top: 1px solid #0d0d0d;
+
+  padding: 1.5rem;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.CreatedBy {
+  font-weight: 300;
+
+  & a {
+    color: #2a2a2a;
+  }
+}
+
+.Links {
+  display: flex;
+  gap: 1.5rem;
+
+  & a {
+    color: #ff8e3c;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Footer {
+    font-size: 1.2em;
+    padding: 0.7rem;
+  }
+}
