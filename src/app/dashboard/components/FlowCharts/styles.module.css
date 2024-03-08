@@ -1,0 +1,53 @@
+
+.flowcharts {
+  width: 100%;
+  &-container {
+    padding: 2rem;
+    padding-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__title {
+    margin: 0;
+    font-size: 1.65rem;
+    font-weight: 800;
+  }
+  &__input {
+    font-family: inherit;
+    width: 100%;
+    padding: 0 1rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    background: transparent;
+    
+    &-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: calc(-0.0625rem * 2);
+        right: 0;
+        left: 2rem;
+        height: 0.0625rem;
+        background-color: #000;
+      }
+    }
+  }
+  &__cards {
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media (width >= 640px) {
+      justify-content: flex-start;
+    }
+
+    gap: 1.25rem;
+  }
+}
