@@ -1,0 +1,53 @@
+.card {
+  background-color: var(--paragraph-color);
+  color: var(--main-color);
+  border-radius: 1.25rem;
+  min-height: 10rem;
+  width: 12rem;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &--created {
+    padding-bottom: 0.5rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+
+    &--created {
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0.15rem;
+    }
+
+    &__add-icon {
+      font-size: 2.75rem;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    &__diagram-icon {
+      font-size: 1.7rem;
+      color: var(--tertiary-color);
+    }
+  }
+}

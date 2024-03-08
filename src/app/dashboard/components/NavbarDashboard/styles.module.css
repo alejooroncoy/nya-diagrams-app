@@ -1,0 +1,135 @@
+.aside {
+  flex-basis: 16.813rem;
+  box-shadow: calc(0.0625rem * 2) 0 0 0 var(--paragraph-color);
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  background-color: #fffffe;
+  height: 100%;
+  width: 2rem;
+  overflow: hidden;
+  transition: width 0.25s ease;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* padding: 0 1rem; */
+  }
+  &__photo {
+    border-radius: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: width 0.25s ease, height 0.25s ease, border-radius 0.25s ease;
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    top: 4rem;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    &__icon {
+      font-size: 1rem;
+    }
+  }
+
+  &:has(.menu--open) {
+    width: 10rem;
+    .aside__photo {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 0.5rem;
+    }
+
+    .aside__toggle {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (width >= 768px) {
+    position: static;
+    background-color: transparent;
+    color: #fffffe;
+    height: auto;
+    width: 10rem;
+    &__photo {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 0.5rem;
+    }
+
+    &__toggle {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  list-style: none;
+  font-size: 1.5rem;
+  transition: padding-left 0.25s ease, font-size 0.25s ease;
+
+  &--open {
+    padding-left: 1.5rem;
+    & .menu__item__link__text {
+      opacity: 1;
+    }
+  }
+
+  @media (width >= 768px) {
+    align-items: center;
+    font-size: 1.75rem;
+  }
+
+  &__item {
+    &__link {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      text-decoration: none;
+      color: var(--paragraph-color);
+      justify-content: center;
+      width: 100%;
+
+      &__icon {
+        opacity: 1;
+        min-width: 2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s ease;
+
+        @media (width >= 768px) {
+          min-width: 0;
+          width: 0;
+        }
+      }
+      &__text {
+        opacity: 0;
+        transition: opacity 0.25s ease;
+
+        @media (width >= 768px) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
