@@ -3,7 +3,7 @@
   width: 100%;
   &-container {
     padding: 2rem;
-    padding-left: 4rem;
+    padding-left: 3.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
