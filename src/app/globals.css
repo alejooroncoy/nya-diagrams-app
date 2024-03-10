@@ -5,7 +5,6 @@
   --tertiary-color: #d9376e;
 }
 
-
 * {
   padding: 0;
   margin: 0;
@@ -17,4 +16,6 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+
+  color: #2a2a2a;
 }
