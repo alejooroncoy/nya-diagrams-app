@@ -1,17 +1,25 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import styles from "./styles.module.css";
-import { FaArrowRight } from "react-icons/fa6";
-import { FaHome } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
-import { useRef } from "react";
+import Image from 'next/image';
+import styles from './styles.module.css';
+import { FaArrowRight } from 'react-icons/fa6';
+import { FaHome } from 'react-icons/fa';
+import { IoSettingsSharp } from 'react-icons/io5';
+import { useRef } from 'react';
 
-const NavbarDashboard = () => {
+interface NavbarDashboardProps {
+  userProfile: string;
+  userName: string;
+}
+
+const NavbarDashboard: React.FC<NavbarDashboardProps> = ({
+  userProfile,
+  userName,
+}) => {
   const menuRef = useRef<HTMLUListElement>(null);
 
   const handleClickToggle = () => {
-    menuRef.current?.classList.toggle(styles["menu--open"]);
+    menuRef.current?.classList.toggle(styles['menu--open']);
   };
 
   return (
@@ -24,7 +32,7 @@ const NavbarDashboard = () => {
           className={styles.aside__photo}
           width={110}
           height={110}
-          src="https://picsum.photos/200"
+          src={userProfile}
           alt="Foto de perfil"
         />
         <ul ref={menuRef} className={styles.menu}>
