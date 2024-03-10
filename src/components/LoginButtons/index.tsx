@@ -3,8 +3,11 @@
 import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 
-import styles from './styles.module.css';
 import { createClient } from '@/utils/supabase/client';
+
+import styles from './styles.module.css';
+
+import Button from '../Button';
 
 const LoginButtons = () => {
   const supabase = createClient();
@@ -20,12 +23,12 @@ const LoginButtons = () => {
 
   return (
     <div className={styles['login-buttons']}>
-      <button onClick={() => oAuth('google')}>
+      <Button onClick={() => oAuth('google')} variant="NORMAL">
         <FcGoogle /> Google
-      </button>
-      <button onClick={() => oAuth('github')}>
+      </Button>
+      <Button onClick={() => oAuth('github')} variant="NORMAL">
         <SiGithub /> Github
-      </button>
+      </Button>
     </div>
   );
 };

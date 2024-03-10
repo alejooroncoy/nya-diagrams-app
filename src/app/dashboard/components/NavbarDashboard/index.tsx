@@ -1,18 +1,20 @@
 'use client';
 
-import Image from 'next/image';
-import styles from './styles.module.css';
-import { FaArrowRight } from 'react-icons/fa6';
-import { FaHome } from 'react-icons/fa';
-import { IoSettingsSharp } from 'react-icons/io5';
 import { useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
-interface NavbarDashboardProps {
-  userProfile: string;
-}
+import styles from './styles.module.css';
 
-const NavbarDashboard: React.FC<NavbarDashboardProps> = ({ userProfile }) => {
+import { IoSettingsSharp } from 'react-icons/io5';
+import { FaArrowRight } from 'react-icons/fa6';
+import { FaHome } from 'react-icons/fa';
+
+type Props = {
+  userProfile: string;
+};
+
+const NavbarDashboard = ({ userProfile }: Props) => {
   const menuRef = useRef<HTMLUListElement>(null);
 
   const handleClickToggle = () => {

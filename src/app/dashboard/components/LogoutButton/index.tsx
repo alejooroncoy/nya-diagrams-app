@@ -3,7 +3,7 @@
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 
-import styles from './styles.module.css';
+import Button from '@/components/Button';
 
 const LogoutButton = () => {
   const supabase = createClient();
@@ -15,9 +15,9 @@ const LogoutButton = () => {
   };
 
   return (
-    <button className={styles['logout-button']} onClick={logout}>
+    <Button onClick={logout} variant="ORANGE">
       Logout
-    </button>
+    </Button>
   );
 };
 
