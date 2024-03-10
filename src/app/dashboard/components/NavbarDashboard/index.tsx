@@ -1,17 +1,24 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import styles from "./styles.module.css";
-import { FaArrowRight } from "react-icons/fa6";
-import { FaHome } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
-import { useRef } from "react";
+import { useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const NavbarDashboard = () => {
+import styles from './styles.module.css';
+
+import { IoSettingsSharp } from 'react-icons/io5';
+import { FaArrowRight } from 'react-icons/fa6';
+import { FaHome } from 'react-icons/fa';
+
+type Props = {
+  userProfile: string;
+};
+
+const NavbarDashboard = ({ userProfile }: Props) => {
   const menuRef = useRef<HTMLUListElement>(null);
 
   const handleClickToggle = () => {
-    menuRef.current?.classList.toggle(styles["menu--open"]);
+    menuRef.current?.classList.toggle(styles['menu--open']);
   };
 
   return (
@@ -24,25 +31,28 @@ const NavbarDashboard = () => {
           className={styles.aside__photo}
           width={110}
           height={110}
-          src="https://picsum.photos/200"
+          src={userProfile}
           alt="Foto de perfil"
         />
         <ul ref={menuRef} className={styles.menu}>
           <li className={styles.menu__item}>
-            <a className={styles.menu__item__link} href="#">
+            <Link className={styles.menu__item__link} href="/dashboard">
               <div className={styles.menu__item__link__icon}>
                 <FaHome />
               </div>
               <span className={styles.menu__item__link__text}>Home</span>
-            </a>
+            </Link>
           </li>
           <li className={styles.menu__item}>
-            <a className={styles.menu__item__link} href="#">
+            <Link
+              className={styles.menu__item__link}
+              href="/dashboard/settings"
+            >
               <div className={styles.menu__item__link__icon}>
                 <IoSettingsSharp />
               </div>
               <span className={styles.menu__item__link__text}>Settings</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
