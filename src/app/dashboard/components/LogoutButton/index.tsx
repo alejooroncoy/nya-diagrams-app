@@ -3,6 +3,8 @@
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 
+import styles from './styles.module.css';
+
 const LogoutButton = () => {
   const supabase = createClient();
   const router = useRouter();
@@ -12,7 +14,11 @@ const LogoutButton = () => {
     router.push('/login');
   };
 
-  return <button onClick={logout}>Logout</button>;
+  return (
+    <button className={styles['logout-button']} onClick={logout}>
+      Logout
+    </button>
+  );
 };
 
 export default LogoutButton;

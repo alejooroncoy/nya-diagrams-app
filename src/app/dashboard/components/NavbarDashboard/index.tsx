@@ -6,17 +6,13 @@ import { FaArrowRight } from 'react-icons/fa6';
 import { FaHome } from 'react-icons/fa';
 import { IoSettingsSharp } from 'react-icons/io5';
 import { useRef } from 'react';
-import LogoutButton from '../LogoutButton';
+import Link from 'next/link';
 
 interface NavbarDashboardProps {
   userProfile: string;
-  userName: string;
 }
 
-const NavbarDashboard: React.FC<NavbarDashboardProps> = ({
-  userProfile,
-  userName,
-}) => {
+const NavbarDashboard: React.FC<NavbarDashboardProps> = ({ userProfile }) => {
   const menuRef = useRef<HTMLUListElement>(null);
 
   const handleClickToggle = () => {
@@ -38,23 +34,25 @@ const NavbarDashboard: React.FC<NavbarDashboardProps> = ({
         />
         <ul ref={menuRef} className={styles.menu}>
           <li className={styles.menu__item}>
-            <a className={styles.menu__item__link} href="#">
+            <Link className={styles.menu__item__link} href="/dashboard">
               <div className={styles.menu__item__link__icon}>
                 <FaHome />
               </div>
               <span className={styles.menu__item__link__text}>Home</span>
-            </a>
+            </Link>
           </li>
           <li className={styles.menu__item}>
-            <a className={styles.menu__item__link} href="#">
+            <Link
+              className={styles.menu__item__link}
+              href="/dashboard/settings"
+            >
               <div className={styles.menu__item__link__icon}>
                 <IoSettingsSharp />
               </div>
               <span className={styles.menu__item__link__text}>Settings</span>
-            </a>
+            </Link>
           </li>
         </ul>
-        <LogoutButton />
       </nav>
     </aside>
   );

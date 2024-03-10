@@ -19,7 +19,6 @@ const Dashboard = async () => {
   return (
     <main className={styles.main}>
       <NavbarDashboard
-        userName={user.data.user?.user_metadata.full_name as string}
         userProfile={user.data.user?.user_metadata.avatar_url as string}
       />
       <FlowCharts />
