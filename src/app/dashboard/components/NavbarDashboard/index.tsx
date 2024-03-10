@@ -6,6 +6,7 @@ import { FaArrowRight } from 'react-icons/fa6';
 import { FaHome } from 'react-icons/fa';
 import { IoSettingsSharp } from 'react-icons/io5';
 import { useRef } from 'react';
+import LogoutButton from '../LogoutButton';
 
 interface NavbarDashboardProps {
   userProfile: string;
@@ -53,6 +54,7 @@ const NavbarDashboard: React.FC<NavbarDashboardProps> = ({
             </a>
           </li>
         </ul>
+        <LogoutButton />
       </nav>
     </aside>
   );
