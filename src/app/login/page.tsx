@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import styles from './page.module.css';
 
-import LoginButtons from '@/components/LoginButtons';
+import LoginPanel from '@/components/LoginPanel';
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -16,7 +16,7 @@ const Login = () => {
           <h2>Login</h2>
         </header>
         <div className={styles['login__auth-buttons']}>
-          <LoginButtons />
+          <LoginPanel />
         </div>
       </div>
     </main>

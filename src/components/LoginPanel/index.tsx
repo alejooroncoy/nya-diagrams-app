@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 
 import Button from '../Button';
 
-const LoginButtons = () => {
+const LoginPanel = () => {
   const supabase = createClient();
 
   const oAuth = async (provider: 'github' | 'google') => {
@@ -33,4 +33,4 @@ const LoginButtons = () => {
   );
 };
 
-export default LoginButtons;
+export default LoginPanel;
