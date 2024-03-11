@@ -1,9 +1,5 @@
 import { Metadata } from 'next';
-import styles from './page.module.css';
 import FlowCharts from './components/FlowCharts';
-import NavbarDashboard from './components/NavbarDashboard';
-import { createClient } from '@/utils/supabase/server';
-import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -11,19 +7,7 @@ export const metadata: Metadata = {
 };
 
 const Dashboard = async () => {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
-
-  const user = await supabase.auth.getUser();
-
-  return (
-    <main className={styles.main}>
-      <NavbarDashboard
-        userProfile={user.data.user?.user_metadata.avatar_url as string}
-      />
-      <FlowCharts />
-    </main>
-  );
+  return <FlowCharts />;
 };
 
 export default Dashboard;
