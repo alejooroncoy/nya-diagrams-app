@@ -70,6 +70,12 @@
     }
   }
 
+  &__user {
+    & a {
+      background: #d9376e;
+    }
+  }
+
   &__arrow {
     height: 50px;
     width: 2px;
