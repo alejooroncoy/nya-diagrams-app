@@ -4,23 +4,19 @@ import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './styles.module.css';
 
-type Props = {
-  variant: 'NORMAL' | 'ORANGE';
-};
+type Props = ButtonHTMLAttributes<HTMLButtonElement> &
+  PropsWithChildren & {
+    variant: 'NORMAL' | 'ORANGE';
+  };
 
-const Button = ({
-  variant,
-  onClick,
-  type,
-  children,
-}: ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren & Props) => {
+const Button = (props: Props) => {
   return (
     <button
-      className={`${styles.button} ${styles[`${variant}`]}`}
-      onClick={onClick}
-      type={type}
+      className={`${styles.button} ${styles[`${props.variant}`]}`}
+      onClick={props.onClick}
+      type={props.type}
     >
-      {children}
+      {props.children}
     </button>
   );
 };
