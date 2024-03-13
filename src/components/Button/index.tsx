@@ -1,20 +1,24 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './styles.module.css';
 
 type Props = {
   variant: 'NORMAL' | 'ORANGE';
-
-  onClick: () => void;
 };
 
-const Button = ({ variant, onClick, children }: Props & PropsWithChildren) => {
+const Button = ({
+  variant,
+  onClick,
+  type,
+  children,
+}: ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren & Props) => {
   return (
     <button
       className={`${styles.button} ${styles[`${variant}`]}`}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>

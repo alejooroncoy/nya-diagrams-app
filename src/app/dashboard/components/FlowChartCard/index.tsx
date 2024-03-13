@@ -1,3 +1,5 @@
+'use client';
+
 import { FaProjectDiagram } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa6';
 
@@ -6,20 +8,21 @@ import styles from './styles.module.css';
 
 type Props = {
   variant?: string;
+  onClickCard?: () => void;
 };
 
 const FlowChartCard = (props: Props) => {
   const isAdd = props.variant === VARIANTS_FLOWCHART_CARD.ADD;
 
   const contentIsAdd = isAdd && (
-    <div className={styles.card__main}>
+    <div className={styles.card__main} onClick={props.onClickCard}>
       <FaPlus className={styles['card__main__add-icon']} />
       <h3 className={styles.card__title}>Add new diagram</h3>
     </div>
   );
 
   const contentIsCreated = !isAdd && (
-    <>
+    <div onClick={props.onClickCard}>
       <div
         className={styles.card__main.concat(
           ` ${styles['card__main--created']}`
@@ -31,7 +34,7 @@ const FlowChartCard = (props: Props) => {
       <footer className={styles.card__footer}>
         <FaProjectDiagram className={styles['card__footer__diagram-icon']} />
       </footer>
-    </>
+    </div>
   );
 
   return (
