@@ -1,22 +1,22 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './styles.module.css';
 
-type Props = {
-  variant: 'NORMAL' | 'ORANGE';
+type Props = ButtonHTMLAttributes<HTMLButtonElement> &
+  PropsWithChildren & {
+    variant: 'NORMAL' | 'ORANGE';
+  };
 
-  onClick: () => void;
-};
-
-const Button = ({ variant, onClick, children }: Props & PropsWithChildren) => {
+const Button = (props: Props) => {
   return (
     <button
-      className={`${styles.button} ${styles[`${variant}`]}`}
-      onClick={onClick}
+      className={`${styles.button} ${styles[`${props.variant}`]}`}
+      onClick={props.onClick}
+      type={props.type}
     >
-      {children}
+      {props.children}
     </button>
   );
 };

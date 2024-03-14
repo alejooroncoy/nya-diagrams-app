@@ -23,10 +23,10 @@ const LoginPanel = () => {
 
   return (
     <div className={styles['login-buttons']}>
-      <Button onClick={() => oAuth('google')} variant="NORMAL">
+      <Button type="button" onClick={() => oAuth('google')} variant="NORMAL">
         <FcGoogle /> Google
       </Button>
-      <Button onClick={() => oAuth('github')} variant="NORMAL">
+      <Button type="button" onClick={() => oAuth('github')} variant="NORMAL">
         <SiGithub /> Github
       </Button>
     </div>

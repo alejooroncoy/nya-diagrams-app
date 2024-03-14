@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const onToggleMenu = () => {
     refMenu.current?.classList?.toggle(styles.NavShowList);
-  }
+  };
 
   return (
     <nav className={styles.Nav}>
