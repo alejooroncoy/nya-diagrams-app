@@ -1,7 +1,7 @@
-import { IoMdClose, IoMdCloseCircle } from 'react-icons/io';
+import { IoMdClose } from 'react-icons/io';
 import styles from './styles.module.css';
-import Button from '@/components/Button';
-import Input from '@/components/Input';
+
+import FlowChartCreateForm from '../FlowChartCreateForm';
 
 interface Props {
   onClose: () => void;
@@ -17,12 +17,7 @@ const FlowChartCreateModal = ({ onClose }: Props) => {
             <IoMdClose />
           </button>
         </header>
-        <form className={styles.modal__form}>
-          <Input type="text" placeholder="Flowchart name" />
-          <Button type="submit" variant="ORANGE" onClick={() => {}}>
-            Create flowchart
-          </Button>
-        </form>
+        <FlowChartCreateForm />
       </div>
     </div>
   );
