@@ -1,0 +1,48 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  &__person1 {
+    position: absolute;
+    transform: translate(100px, -130px);
+    width: 80px;
+    z-index: -1;
+  }
+
+  &__person2 {
+    position: absolute;
+    transform: translate(-100px, -130px);
+    width: 80px;
+    z-index: -1;
+  }
+
+  &__person3 {
+    position: absolute;
+    transform: translate(0px, -130px);
+    width: 80px;
+    z-index: -1;
+  }
+
+  @media (width >= 768px) {
+    &__person1 {
+      transform: translate(250px, 10px);
+      width: 200px;
+    }
+
+    &__person2 {
+      transform: translate(-250px, 10px);
+      width: 200px;
+    }
+
+    &__person3 {
+      transform: translate(0px, -140px);
+      width: 100px;
+    }
+  }
+
+  @media (width <= 600px) {
+    padding: 1rem;
+  }
+}
