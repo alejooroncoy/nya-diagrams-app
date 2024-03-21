@@ -13,6 +13,8 @@
   z-index: 5;
   background: #000000a4;
 
+  padding: 1rem;
+
   &-container {
     background: #fffffe;
     padding: 1.5rem;
@@ -29,9 +31,13 @@
     width: 100%;
 
     &__title {
-      font-size: 2em;
+      font-size: 1.5em;
       margin-bottom: 1rem;
       font-weight: 600;
+
+      @media (width >= 600px) {
+        font-size: 2em;
+      }
     }
 
     &__closebtn {
@@ -46,5 +52,9 @@
         cursor: pointer;
       }
     }
+  }
+
+  @media (width >= 600px) {
+    padding: none;
   }
 }
