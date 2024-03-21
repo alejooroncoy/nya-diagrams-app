@@ -1,0 +1,58 @@
+@import './animations.css';
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  padding: 1rem;
+
+  &__person {
+    position: absolute;
+    transition: all 0.2s ease;
+    z-index: -1;
+  }
+
+  &__person1 {
+    transform: translate(100px, -150px);
+    animation: person1-bottom-to-top 0.5s ease;
+    width: 80px;
+  }
+
+  &__person2 {
+    transform: translate(-100px, -150px);
+    animation: person2-bottom-to-top 0.5s ease;
+    width: 80px;
+  }
+
+  &__person3 {
+    transform: translate(0px, -150px);
+    animation: person3-bottom-to-top 0.5s ease;
+    width: 80px;
+  }
+
+  @media (width >= 768px) {
+    &__person1 {
+      transform: translate(250px, 10px);
+      animation: person-left-to-right 0.5s ease;
+      width: 200px;
+    }
+
+    &__person2 {
+      transform: translate(-250px, 10px);
+      animation: person-right-to-left 0.5s ease;
+      width: 200px;
+    }
+
+    &__person3 {
+      transform: translate(0px, -140px);
+      animation: person-bottom-to-top 0.5s ease;
+      width: 100px;
+    }
+  }
+
+  @media (width >= 600px) {
+    padding: none;
+  }
+}

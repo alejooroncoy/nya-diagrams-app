@@ -1,0 +1,59 @@
+@keyframes person-left-to-right {
+  0% {
+    transform: translate(100px, 10px);
+  }
+
+  100% {
+    transform: translate(250px, 10px);
+  }
+}
+
+@keyframes person-right-to-left {
+  0% {
+    transform: translate(-100px, 10px);
+  }
+
+  100% {
+    transform: translate(-250px, 10px);
+  }
+}
+
+@keyframes person-bottom-to-top {
+  0% {
+    transform: translate(0px, -50px);
+  }
+
+  100% {
+    transform: translate(0px, -140px);
+  }
+}
+
+@keyframes person1-bottom-to-top {
+  0% {
+    transform: translate(100px, -50px);
+  }
+
+  100% {
+    transform: translate(100px, -150px);
+  }
+}
+
+@keyframes person2-bottom-to-top {
+  0% {
+    transform: translate(-100px, -50px);
+  }
+
+  100% {
+    transform: translate(-100px, -150px);
+  }
+}
+
+@keyframes person3-bottom-to-top {
+  0% {
+    transform: translate(0px, -50px);
+  }
+
+  100% {
+    transform: translate(0px, -150px);
+  }
+}
